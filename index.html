@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/tailwind.css">
+	<script>
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+	</script>
+	<title>Where in the world?</title>
+</head>
+<body class="bg-bg-light dark:bg-bg-dark">
+	<header class="bg-white flex justify-between px-4 sm:px-10 py-6 shadow-md dark:bg-dark-blue-element ">
+		<h1 class="font-extrabold text-dark-blue-text dark:text-white ml-1">Where in the world?</h1>
+		<a href="#" id="darkModeBtn" class="flex items-center gap-2 text-dark-blue-text font-semibold text-sm dark:text-white">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+			</svg>
+			Dark Mode
+		</a>
+	</header>
+	<main class="m-2 mx-4">
+		<div class="sm:flex sm:justify-between sm:px-6 sm:items-center">
+			<div class="relative text-gray mt-6 shadow-md bg-white rounded-md dark:text-white">
+				<span class="absolute inset-y-0 left-0 flex items-center pl-8">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+					</svg>
+				</span>
+				<input class="pl-20 py-4 px-6 rounded w-full text-sm dark:bg-dark-blue-element" type="text" name="search" id="search" placeholder="Search for a country..." autocomplete="off">
+			</div>
+	
+			<div class="mt-8 relative">
+				<span  id="regionFilter" class="flex justify-between p-4 text-sm bg-white w-60 rounded-md shadow-md dark:bg-dark-blue-element dark:text-white cursor-pointer">
+					<a href="#" class="mx-2">Filter by Region</a>
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+						<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+					</svg>
+				</span>
+	
+				<div id="regions" class="absolute bg-white w-60 rounded-md mt-2 shadow-md text-sm dark:bg-dark-blue-element dark:text-white hidden">
+					<p class="block px-6 pt-4 hover:font-bold">Africa</p>
+					<p class="block px-6 pt-3 hover:font-bold">Americas</p>
+					<p class="block px-6 pt-3 hover:font-bold">Asia</p>
+					<p class="block px-6 pt-3 hover:font-bold">Europe</p>
+					<p class="block px-6 pt-2 pb-4 hover:font-bold">Oceania</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="countries" class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+	</main>
+	<script src="/index.js"></script>
+</body>
+</html>

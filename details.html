@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/tailwind.css">
+	<script>
+		if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			document.documentElement.classList.add('dark')
+		} else {
+			document.documentElement.classList.remove('dark')
+		}
+	</script>
+	<title>Where in the world?</title>
+</head>
+<body class="bg-bg-light dark:bg-bg-dark">
+	<header class="bg-white flex justify-between px-4 py-6 shadow-md dark:bg-dark-blue-element">
+		<h1 class="font-extrabold text-dark-blue-text dark:text-white ml-1">Where in the world?</h1>
+		<a href="#" id="darkModeBtn" class="flex items-center gap-2 text-dark-blue-text font-semibold text-sm dark:text-white">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+			</svg>
+			Dark Mode
+		</a>
+	</header>
+
+	<main class="m-2 mx-8">
+		<a href="/" class="block bg-white py-1 w-24 mt-6 text-center text-sm rounded shadow-md flex justify-center items-center gap-1 dark:bg-dark-blue-element dark:text-white">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+			</svg>
+			<span>Back</span>
+		</a>
+	</main>
+	
+	<script src="/details.js"></script>
+</body>
+</html>
