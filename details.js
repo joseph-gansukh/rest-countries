@@ -119,7 +119,7 @@ fetch(`https://restcountries.com/v2/name/${country}`)
 			data.map(country => {
 				let countryButton = document.createElement('a')
 				countryButton.setAttribute('class', 'mt-4 block p-4 bg-white text-center text-sm shadow-md rounded dark:text-white dark:bg-dark-blue-element')
-				countryButton.href = `/details.html?country=${country.name.toLowerCase()}`
+				countryButton.href = `/rest-countries/details.html?country=${country.name.toLowerCase()}`
 				countryButton.textContent = country.name
 				borderCountriesDiv.appendChild(countryButton)
 			})

@@ -32,7 +32,7 @@ const createCountryEl = (country) => {
 	containerDiv.setAttribute('data-country-name', country.name.toLowerCase())
 	
 	let imageAEl = document.createElement('a')
-	imageAEl.href = `/details.html?country=${country.name.toLowerCase()}`
+	imageAEl.href = `/rest-countries/details.html?country=${country.name.toLowerCase()}`
 
 	let imageEl = document.createElement('img')
 	imageEl.classList.add('cursor-pointer', 'h-44', 'w-full', 'object-cover')
