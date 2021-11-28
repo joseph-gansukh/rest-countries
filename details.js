@@ -103,7 +103,7 @@ fetch(`https://restcountries.com/v2/name/${country}`)
 		
 		let borderCountriesEl = document.createElement('h2')
 		borderCountriesEl.textContent = 'Border Countries:'
-		borderCountriesEl.classList.add('font-semibold', 'mt-10', 'text-lg')
+		borderCountriesEl.classList.add('font-semibold', 'mt-10', 'text-lg', 'dark:text-white')
 
 		let borderCountriesPromises = []
 		country.borders?.map(country => {
